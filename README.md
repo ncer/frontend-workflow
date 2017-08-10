@@ -90,6 +90,34 @@ https://assets.adobe.com
 }
 ```
 
+Если в проекте много шрифтов и начертаний, для быстрого их подключения удобно сделать миксины для каждого начертания.
+
+```stylus
+// Variables
+$reserveFonts = 'Tahoma, Arial, sans-serif';
+$fontOpenSans = 'Open Sans', $reserveFonts;
+
+// Mixins
+
+// Open Sans normal normal
+font-open-sans() {
+    font-family: $fontOpenSans;
+}
+
+// Open Sans light normal
+font-open-sans-light() {
+    font-family: $fontOpenSans;
+    font-weight: 300;
+}
+
+// Open Sans light italic
+font-open-sans-light-italic() {
+    font-family: $fontOpenSans;
+    font-weight: 300;
+    font-style: italic
+}
+```
+
 Иногда бывает так, что по названию шрифта трудно определить степень жирности начертания. Для облегчения задачи, можно воспользоваться табличкой из статьи [Best practices for using font-weights](https://www.webtype.com/info/articles/fonts-weights/)
 
 - 100 - Extra Light or Ultra Light
