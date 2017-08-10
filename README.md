@@ -7,7 +7,9 @@
 - с помощью [скрипта](https://github.com/frontendbeast/list-fonts)
 - загрузив макет в [Adobe Assets](https://assets.adobe.com)
 
-Комплект шрифтов для веба можно найти не всегда. В этом случае его нужно будет сгенерировать. Есть несколько способов: 
+Отличный ресурс для поиска кириллических шрифтов: https://fontstorage.com/. Там можно скачать шрифты сразу для веба в нужных форматах, а также готовый css файлик для быстрого подключения.
+
+Если подходящий комплект шрифтов найти не удается, придется искать любой и генерировать на его основе нужные форматы. Есть несколько способов: 
 
 - [FontSquirrel](https://www.fontsquirrel.com/)
 - [Transfonter](https://transfonter.org/)
@@ -49,6 +51,56 @@
 ## Работа со стилями
 
 https://assets.adobe.com
+
+### Шрифты
+
+Шрифтовые файлы необходимо подключать именно как гарнитуры. Это является хорошим тоном, а также позволяет избежать некоторых проблем с рендером шрифтов в браузере. Подробнее можно почитать [здесь](https://fontstorage.com/ru/blog/about-font-face-part-two/).
+
+Если коротко, предположим есть 2 файла: opensans.woff и opensanslight.woff. Несмотря на то, что файлы разные, это один и тот же шрифт - Open Sans, - отличающийся только начертаниями (font-weight): normal и light. Стало быть и подключать их нужно как семейство одного шрифта. 
+
+<strong style="color: red !important">Плохо</strong>
+```css
+@font-face {
+    font-family: 'Open Sans';
+    src: url('opensans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('opensanslight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
+<strong style="color: green !important">Хорошо</strong>
+```css
+@font-face {
+    font-family: 'Open Sans';
+    src: url('opensans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('opensanslight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+```
+
+Иногда бывает так, что по названию шрифта трудно определить степень жирности начертания. Для облегчения задачи, можно воспользоваться табличкой из статьи [Best practices for using font-weights](https://www.webtype.com/info/articles/fonts-weights/)
+
+- 100 - Extra Light or Ultra Light
+- 200 - Light or Thin
+- 300 - Book or Demi
+- 400 - Normal or Regular
+- 500 - Medium
+- 600 - Semibold, Demibold
+- 700 - Bold
+- 800 - Black, Extra Bold or Heavy
+- 900 - Extra Black, Fat, Poster or Ultra Black
 
 ## Верстка
 
