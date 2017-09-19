@@ -123,12 +123,15 @@ $fontOpenSans = 'Open Sans', $reserveFonts;
 // Open Sans normal normal
 font-open-sans() {
     font-family: $fontOpenSans;
+    font-weight: normal;
+    font-style: normal;
 }
 
 // Open Sans light normal
 font-open-sans-light() {
     font-family: $fontOpenSans;
     font-weight: 300;
+    font-style: normal;
 }
 
 // Open Sans light italic
