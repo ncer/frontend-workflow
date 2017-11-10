@@ -111,11 +111,11 @@ https://assets.adobe.com
 }
 ```
 
-Если в проекте много шрифтов и начертаний, для быстрого их подключения удобно сделать миксины для каждого начертания.
+Если в проекте много шрифтов и начертаний, для быстрого их подключения удобно сделать миксины для каждого начертания. Пример для stylus:
 
 ```stylus
 // Variables
-$reserveFonts = 'Tahoma, Arial, sans-serif';
+$reserveFonts = Tahoma, Arial, sans-serif;
 $fontOpenSans = 'Open Sans', $reserveFonts;
 
 // Mixins
@@ -142,7 +142,9 @@ font-open-sans-light-italic() {
 }
 ```
 
-Иногда бывает так, что по названию шрифта трудно определить степень жирности начертания. Для облегчения задачи, можно воспользоваться табличкой из статьи [Best practices for using font-weights](https://www.webtype.com/info/articles/fonts-weights/)
+[Сниппеты для остальных препроцессоров](https://gist.github.com/ncer/6efc59f59268e02be5ba2de9fbd8e08f).
+
+Иногда бывает так, что по названию шрифта трудно определить степень жирности начертания. Для облегчения задачи, можно воспользоваться табличкой из [этой статьи](https://www.webtype.com/info/articles/fonts-weights/).
 
 - 100 - Extra Light or Ultra Light
 - 200 - Light or Thin
